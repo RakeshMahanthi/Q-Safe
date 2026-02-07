@@ -8,7 +8,7 @@ Q-Safe is a Chrome extension that helps users determine whether a website is usi
 - Popup UI with an "Analyze Current Site" button and clear status and output.
 
 
-## How it works (brief)
+## How it works
 - When you click "Analyze Current Site", the extension attempts to read TLS/security information for the active tab (via webRequest.getSecurityInfo).
 - It searches fields such as key exchange, key exchange group, cipher, signature algorithm, and certificate metadata for PQC/hybrid markers.
 - If the security API is not available in the runtime, the extension falls back to lightweight heuristics (less reliable).
@@ -42,6 +42,5 @@ Q-Safe is a Chrome extension that helps users determine whether a website is usi
 - Do not rely on this extension as the sole authority for security decisions.
 
 ## Development notes
-- Primary TLS check logic is implemented in `src/utils/pqc-check.ts` (or equivalent utility file).
+- Primary TLS check logic is implemented in `background.ts` (or equivalent utility file).
 - UI is in `popup.html` / `popup.js`.
-- If you add more indicators or integrate server-side checks, update README and manifest permissions accordingly.
