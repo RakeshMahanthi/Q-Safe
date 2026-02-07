@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Q-Safe</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 16px;
+    width: 320px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                 "Helvetica Neue", sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    font-size: 16px;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: #0b2e13;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 200, 83, 0.4);
+  }
+
+  button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  .output-box {
+    margin-top: 14px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+    max-height: 140px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background: #ffc107; /* default amber */
+  }
+
+  .safe {
+    background: #00e676;
+  }
+
+  .unsafe {
+    background: #ff5252;
+  }
+
+  .footer {
+    margin-top: 10px;
+    font-size: 10px;
+    opacity: 0.6;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Q-Safe</h1>
+    <div class="subtitle">
+      Quantum-resilience check for the current website
+    </div>
+
+    <button id="checkButton">Analyze Current Site</button>
+
+    <div class="status" id="status">
+      <div class="status-dot"></div>
+      <span>Awaiting analysis…</span>
+    </div>
+
+    <div class="output-box" id="output">
+      Click “Analyze” to check PQC, QUIC, and hybrid TLS signals.
+    </div>
+
+    <div class="footer">
+      PQC inference based on TLS heuristics
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

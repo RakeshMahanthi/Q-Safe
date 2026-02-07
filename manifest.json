@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Q-Safe PQC Detector",
+    "version": "1.0",
+    "description": "Detects the use of post-quantum cryptography (PQC) in web applications.",
+    "permissions": [
+        "debugger",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
